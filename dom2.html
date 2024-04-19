@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="utf-8" />
+<title>HTML Manipulation with JavaScript</title>
 </head>
 <body>
-    
+<div class="content" id="content_first" hidden>
+    <img src="/img/caramoneda.jpg">
+</div><!-- #content_first -->
+<div class="content" id="content_second" hidden>
+      <img src="/img/cruzmoneda.jpg">
+</div><!-- #content_second -->
+    <script>
+let content_visible;
+    switch ( Math.floor(Math.random() * 3) )
+{
+case 0:
+content_visible = "#content_first";
+break;
+case 1:
+content_visible = "#content_second";
+break;
+}
+document.querySelector(content_visible).removeAttribute("hidden");
+    </script>
 </body>
 </html>
